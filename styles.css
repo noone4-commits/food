@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
-  direction: rtl;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
 header {
@@ -166,6 +166,9 @@ footer a:hover {
 /* Weekly Menu Styling */
 .weekly-menu {
   margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .weekly-menu h2 {
   color: #FF9800;
@@ -182,6 +185,10 @@ footer a:hover {
   border-radius: 6px;
   padding: 15px;
   margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 15px auto;
 }
 .weekly-menu .day-menu h3 {
   color: #FF9800;
@@ -189,9 +196,10 @@ footer a:hover {
   margin-bottom: 10px;
 }
 .weekly-menu .day-menu ul {
-  list-style: disc inside;
-  color: #E0E0E0;
+  list-style-position: inside;
   padding-left: 0;
+  margin: 0 auto;
+  display: inline-block;
 }
 .weekly-menu .day-menu ul li {
   margin-bottom: 5px;
@@ -216,23 +224,41 @@ footer a:hover {
   gap: 20px;
 }
 
-/* Center quick links */
-.links .btn {
-  margin: 0 10px;
+/* Quick links alignment: heading full width, buttons side by side centered */
+.links.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.links.container h2 {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.links.container a.btn {
+  flex: 0 1 auto;
 }
 
-/* Weekly menu day cards center and max width */
+/* Weekly menu flex centering */
+.weekly-menu.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Day-menu width control */
 .weekly-menu .day-menu {
+  width: 100%;
   max-width: 600px;
-  margin: 0 auto 15px;
-  text-align: right; /* keep list aligned for readability */
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
   .weekly-menu .day-menu {
-    max-width: 100%;
-    padding: 10px;
+    width: 100%;
+    margin: 0 auto 15px;
   }
   .header-content {
     flex-direction: column;
@@ -240,4 +266,40 @@ footer a:hover {
   nav {
     margin-top: 10px;
   }
+}
+
+/* ======== Overrides to force centering ======== */
+/* Quick Links: row, centered */
+.links.container {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.links.container a.btn {
+  margin: 0 10px !important;
+}
+
+/* Weekly Menu: centered column */
+#weekly-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+#weekly-menu .day-menu {
+  margin: 15px auto !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 600px !important;
 } 
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
