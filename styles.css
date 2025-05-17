@@ -200,4 +200,44 @@ footer a:hover {
 /* Override orange-button text for back-link */
 .btn.read-more {
   color: #000;
+}
+
+/* Center global content */
+.container, header, .links, .hero, .weekly-menu, footer {
+  text-align: center;
+}
+
+/* Center header content */
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Center quick links */
+.links .btn {
+  margin: 0 10px;
+}
+
+/* Weekly menu day cards center and max width */
+.weekly-menu .day-menu {
+  max-width: 600px;
+  margin: 0 auto 15px;
+  text-align: right; /* keep list aligned for readability */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .weekly-menu .day-menu {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .header-content {
+    flex-direction: column;
+  }
+  nav {
+    margin-top: 10px;
+  }
 } 
