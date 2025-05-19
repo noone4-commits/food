@@ -65,5 +65,17 @@
       <p>© 2025 ביקורת חד"א. כל הזכויות שמורות.</p>
     </div>
   </footer>
+
+  <div style="text-align:center; margin: 32px 0 16px 0;">
+    <div style="font-size:1.2em; font-weight:bold; margin-bottom:10px; color:#f5eded;">צריך הקראה אחיע?</div>
+    <button onclick="document.getElementById('audio-read').play()" style="background:#1976d2; color:#fff; border:none; border-radius:8px; padding:12px 24px; font-size:1.1em; cursor:pointer; font-family:inherit; margin-left:8px;">
+      הפעל
+    </button>
+    <button onclick="document.getElementById('audio-read').pause()" style="background:#d32f2f; color:#fff; border:none; border-radius:8px; padding:12px 24px; font-size:1.1em; cursor:pointer; font-family:inherit; margin-right:8px;">
+      הפסק
+    </button>
+    <div style="margin-top:8px; font-size:1em; color:#333;">תקריא לי אחי אני לא יודע לקרוא</div>
+    <audio id="audio-read" src="output-f.mp3"></audio>
+  </div>
 </body>
 </html> 
